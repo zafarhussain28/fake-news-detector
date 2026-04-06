@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TruthLens — AI-powered Fake News Detection. Paste any news article and our machine learning model tells you if it's Real or Fake, with explainable AI insights."
+    />
+    <title>TruthLens — AI Fake News Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Animated background blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+    <div class="bg-blob blob-4"></div>
+
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo" data-page="home">
+          <span class="nav-logo-icon">🔬</span>
+          <span class="nav-logo-text">TruthLens</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+          <li><a href="#" class="nav-link" data-page="detector">Detector</a></li>
+          <li><a href="#" class="nav-link" data-page="facts">Facts</a></li>
+          <li><a href="#" class="nav-link" data-page="how-it-works">How It Works</a></li>
+          <li><a href="#" class="nav-link" data-page="about">About</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PAGE: HOME
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="page active" id="page-home">
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-badge">🤖 AI-Powered Detection</div>
+          <h1 class="hero-title">
+            Don't Get Fooled.<br />
+            <span class="gradient-text">Detect Fake News Instantly.</span>
+          </h1>
+          <p class="hero-desc">
+            TruthLens uses advanced machine learning to analyze news articles and
+            determine their authenticity in seconds. Powered by TF-IDF vectorization
+            and multi-model classification with explainable AI.
+          </p>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary" data-page="detector">Try the Detector</a>
+            <a href="#" class="btn btn-outline" data-page="how-it-works">Learn How It Works</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">44,898</span>
+              <span class="stat-label">Articles Trained</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">93%+</span>
+              <span class="stat-label">Accuracy</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number">3</span>
+              <span class="stat-label">ML Models</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick feature cards on home -->
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="section-tag">✨ Why TruthLens?</span>
+            <h2 class="section-title">Fight Misinformation with AI</h2>
+            <p class="section-desc">
+              Our powerful ML pipeline gives you instant, explainable verdicts on any news article.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card glass-card">
+              <div class="feature-icon">⚡</div>
+              <h3>Instant Analysis</h3>
+              <p>Get real-time predictions in under a second using our optimized ML pipeline.</p>
+            </div>
+
+            <div class="feature-card glass-card">
+              <div class="feature-icon">🧠</div>
+              <h3>Explainable AI</h3>
+              <p>See exactly which keywords influenced the decision — full transparency, no black boxes.</p>
+            </div>
+
+            <div class="feature-card glass-card">
+              <div class="feature-icon">🎯</div>
+              <h3>93%+ Accuracy</h3>
+              <p>Trained on 44,898 articles with multiple competing models selecting the best performer.</p>
+            </div>
+
+            <div class="feature-card glass-card">
+              <div class="feature-icon">🛡️</div>
+              <h3>Privacy First</h3>
+              <p>Everything runs locally — your articles are never sent to any external server.</p>
+            </div>
+          </div>
+
+          <div class="home-cta">
+            <a href="#" class="btn btn-primary btn-lg" data-page="detector">
+              🔍 Start Analyzing News
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PAGE: DETECTOR
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="page" id="page-detector">
+      <section class="section page-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="section-tag">🔍 Analyze</span>
+            <h2 class="section-title">News Article Detector</h2>
+            <p class="section-desc">
+              Paste a news article below and our AI will analyze its language patterns,
+              structure, and content to determine if it's real or fake.
+            </p>
+          </div>
+
+          <div class="detector-grid">
+            <!-- Input card -->
+            <div class="card glass-card detector-input-card">
+              <label for="news-input" class="input-label">Paste Your Article</label>
+              <textarea
+                id="news-input"
+                placeholder="Paste the full text of a news article here…"
+                rows="10"
+              ></textarea>
+              <button id="check-btn" type="button">
+                <span class="btn-text">🔍 Analyze Article</span>
+                <span class="btn-loader" aria-hidden="true"></span>
+              </button>
+              <p class="input-hint">Tip: Longer articles give more accurate results</p>
+            </div>
+
+            <!-- Result card -->
+            <section
+              id="result-card"
+              class="card glass-card result-card hidden"
+              aria-live="polite"
+            >
+              <div class="result-header">
+                <div class="result-badge" id="result-badge">—</div>
+                <p class="result-label" id="result-label"></p>
+              </div>
+
+              <div class="confidence-bar-wrapper">
+                <span class="confidence-text" id="confidence-text"></span>
+                <div class="confidence-track">
+                  <div class="confidence-fill" id="confidence-fill"></div>
+                </div>
+              </div>
+
+              <!-- Explainable AI section -->
+              <div id="explanation-section" class="explanation-section hidden">
+                <h3 class="explanation-title">🧠 Why this prediction?</h3>
+                <p class="explanation-desc" id="explanation-desc"></p>
+                <h4 class="keywords-heading">Key Indicators</h4>
+                <ul class="keyword-list" id="keyword-list"></ul>
+              </div>
+            </section>
+          </div>
+
+          <!-- Sample articles to try -->
+          <div class="samples-card glass-card">
+            <h3 class="samples-title">📋 Try These Sample Articles</h3>
+            <div class="samples-grid">
+              <button class="sample-btn" data-sample="Google introduced a new AI model that can translate over 100 languages with improved accuracy. The model uses a transformer architecture and was trained on multilingual datasets spanning news, books, and web pages.">
+                <span class="sample-label real-label">Real</span>
+                Google AI Translation Model
+              </button>
+              <button class="sample-btn" data-sample="NASA successfully launched the Artemis II mission, sending four astronauts on a journey around the Moon. This marks the first crewed lunar mission since Apollo 17 in 1972 and is a critical step toward establishing a sustainable human presence on the Moon.">
+                <span class="sample-label real-label">Real</span>
+                NASA Artemis II Mission
+              </button>
+              <button class="sample-btn" data-sample="EXPOSED: Scientists confirm the Earth is flat and all governments have been lying to us for decades. The UN secretly admitted in a leaked document that the globe model was fabricated to control populations worldwide.">
+                <span class="sample-label fake-label">Fake</span>
+                Flat Earth Conspiracy
+              </button>
+              <button class="sample-btn" data-sample="BREAKING: Secret underground bunker discovered beneath the White House where lizard people have been controlling the government since 1947. Multiple whistleblowers confirm the shocking truth.">
+                <span class="sample-label fake-label">Fake</span>
+                Lizard People Conspiracy
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PAGE: FACTS
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="page" id="page-facts">
+      <section class="section page-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="section-tag">📊 The Problem</span>
+            <h2 class="section-title">Fake News by the Numbers</h2>
+            <p class="section-desc">
+              Misinformation is one of the biggest threats of the digital age. Here's
+              why detecting fake news matters.
+            </p>
+          </div>
+
+          <div class="facts-grid">
+            <div class="fact-card glass-card">
+              <div class="fact-icon">📱</div>
+              <div class="fact-number">68%</div>
+              <p class="fact-text">
+                of adults encounter fake news on social media at least once a week
+              </p>
+            </div>
+            <div class="fact-card glass-card">
+              <div class="fact-icon">⚡</div>
+              <div class="fact-number">6×</div>
+              <p class="fact-text">
+                faster — fake news spreads 6 times faster than real news on social platforms
+              </p>
+            </div>
+            <div class="fact-card glass-card">
+              <div class="fact-icon">🌍</div>
+              <div class="fact-number">86%</div>
+              <p class="fact-text">
+                of internet users have been deceived by fake news at least once
+              </p>
+            </div>
+            <div class="fact-card glass-card">
+              <div class="fact-icon">💰</div>
+              <div class="fact-number">$78B</div>
+              <p class="fact-text">
+                estimated annual global economic cost of fake news and misinformation
+              </p>
+            </div>
+            <div class="fact-card glass-card">
+              <div class="fact-icon">🧠</div>
+              <div class="fact-number">59%</div>
+              <p class="fact-text">
+                of people share news articles without reading beyond the headline
+              </p>
+            </div>
+            <div class="fact-card glass-card">
+              <div class="fact-icon">🤖</div>
+              <div class="fact-number">AI</div>
+              <p class="fact-text">
+                Machine learning can detect fake news with 93%+ accuracy — better than most humans
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline / History -->
+          <div class="timeline-card glass-card">
+            <h3 class="timeline-title">📰 The Rise of Fake News</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-year">2016</div>
+                <p>Fake news became a global concern during major elections worldwide, with misinformation spreading rapidly across social media platforms.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <p>Studies revealed that false news reaches 1,500 people 6× faster than the truth. MIT research confirmed the alarming spread rate.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2020</div>
+                <p>The COVID-19 "infodemic" showed the deadly consequences of misinformation, with WHO declaring it a major public health threat.</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <p>AI-generated deepfakes and synthetic media make fake news harder to detect, making tools like TruthLens more essential than ever.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PAGE: HOW IT WORKS
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="page" id="page-how-it-works">
+      <section class="section page-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="section-tag">⚙️ Under the Hood</span>
+            <h2 class="section-title">How Our AI Detects Fake News</h2>
+            <p class="section-desc">
+              Our system uses a rigorous NLP pipeline and multiple machine learning
+              models to analyze text at a deep level.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card glass-card">
+              <div class="step-number">01</div>
+              <h3 class="step-title">Text Preprocessing</h3>
+              <p class="step-desc">
+                The article is cleaned by removing URLs, special characters, stopwords
+                and noise. Text is lemmatized and normalized so the model focuses on
+                meaningful content, not formatting.
+              </p>
+              <div class="step-tech">NLTK · Lemmatization · Regex</div>
+            </div>
+
+            <div class="step-card glass-card">
+              <div class="step-number">02</div>
+              <h3 class="step-title">Feature Extraction</h3>
+              <p class="step-desc">
+                Using TF-IDF (Term Frequency–Inverse Document Frequency) with up to
+                50,000 features and bigrams, the text is converted into a numerical
+                vector capturing word importance.
+              </p>
+              <div class="step-tech">TF-IDF · 50K Features · Bigrams</div>
+            </div>
+
+            <div class="step-card glass-card">
+              <div class="step-number">03</div>
+              <h3 class="step-title">Multi-Model Classification</h3>
+              <p class="step-desc">
+                Three models — Logistic Regression, Passive Aggressive Classifier, and
+                Linear SVC — compete during training. The best performing model is
+                automatically selected.
+              </p>
+              <div class="step-tech">Logistic Regression · PA · LinearSVC</div>
+            </div>
+
+            <div class="step-card glass-card">
+              <div class="step-number">04</div>
+              <h3 class="step-title">Explainable AI</h3>
+              <p class="step-desc">
+                We don't just give a verdict — we show which keywords influenced the
+                prediction the most, so you can understand <em>why</em> the model
+                made its decision.
+              </p>
+              <div class="step-tech">Coefficient Analysis · XAI · Transparency</div>
+            </div>
+          </div>
+
+          <!-- Pipeline diagram -->
+          <div class="pipeline glass-card">
+            <h3 class="pipeline-title">Our ML Pipeline</h3>
+            <div class="pipeline-flow">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">📝</div>
+                <span>Raw Article</span>
+              </div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-step">
+                <div class="pipeline-icon">🧹</div>
+                <span>Preprocess</span>
+              </div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-step">
+                <div class="pipeline-icon">📊</div>
+                <span>TF-IDF</span>
+              </div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-step">
+                <div class="pipeline-icon">🤖</div>
+                <span>ML Model</span>
+              </div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-step result-pipeline">
+                <div class="pipeline-icon">✅</div>
+                <span>Real / Fake</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech details -->
+          <div class="tech-details glass-card">
+            <h3 class="tech-title">🔧 Technical Details</h3>
+            <div class="tech-grid">
+              <div class="tech-item">
+                <span class="tech-label">Framework</span>
+                <span class="tech-value">Flask (Python)</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-label">ML Library</span>
+                <span class="tech-value">scikit-learn</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-label">NLP</span>
+                <span class="tech-value">NLTK + Custom Regex</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-label">Features</span>
+                <span class="tech-value">50,000 TF-IDF (1,2)-grams</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-label">Best Model</span>
+                <span class="tech-value">LinearSVC</span>
+              </div>
+              <div class="tech-item">
+                <span class="tech-label">Training Set</span>
+                <span class="tech-value">44,898 articles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         PAGE: ABOUT
+         ═══════════════════════════════════════════════════════════════════ -->
+    <div class="page" id="page-about">
+      <section class="section page-section">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="section-tag">ℹ️ About</span>
+            <h2 class="section-title">About TruthLens</h2>
+            <p class="section-desc">
+              Learn about our mission, technology, and how you can help combat misinformation.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card glass-card">
+              <div class="about-icon">🎯</div>
+              <h3>Our Mission</h3>
+              <p>
+                To combat misinformation by providing accessible, AI-powered tools
+                that help people verify news before sharing it. In an era of
+                information overload, critical thinking aided by technology is
+                essential.
+              </p>
+            </div>
+
+            <div class="about-card glass-card">
+              <div class="about-icon">📚</div>
+              <h3>Training Data</h3>
+              <p>
+                Our model was trained on a curated dataset of 44,898 news articles —
+                21,417 verified real articles from trusted sources and 23,481
+                identified fake articles from known misinformation outlets.
+              </p>
+            </div>
+
+            <div class="about-card glass-card">
+              <div class="about-icon">🛡️</div>
+              <h3>Tech Stack</h3>
+              <p>
+                Built with Python Flask on the backend, scikit-learn for ML,
+                NLTK for text processing, and a modern responsive frontend.
+                The entire system is open-source and locally hosted.
+              </p>
+            </div>
+
+            <div class="about-card glass-card">
+              <div class="about-icon">⚠️</div>
+              <h3>Disclaimer</h3>
+              <p>
+                This tool provides AI-assisted analysis and should be used as one
+                of many tools for verifying information. Always cross-reference
+                with trusted sources. No AI system is 100% accurate.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tips section -->
+          <div class="tips-card glass-card">
+            <h3 class="tips-title">🛡️ How to Spot Fake News Yourself</h3>
+            <div class="tips-grid">
+              <div class="tip">
+                <span class="tip-num">1</span>
+                <p><strong>Check the source.</strong> Is it a reputable news outlet? Look at the domain name carefully.</p>
+              </div>
+              <div class="tip">
+                <span class="tip-num">2</span>
+                <p><strong>Read beyond the headline.</strong> Clickbait headlines are designed to provoke emotion, not inform.</p>
+              </div>
+              <div class="tip">
+                <span class="tip-num">3</span>
+                <p><strong>Verify with other sources.</strong> If only one site is reporting it, be skeptical.</p>
+              </div>
+              <div class="tip">
+                <span class="tip-num">4</span>
+                <p><strong>Check the date.</strong> Old stories are often reshared as if new to create confusion.</p>
+              </div>
+              <div class="tip">
+                <span class="tip-num">5</span>
+                <p><strong>Look for evidence.</strong> Real news cites sources, data, and expert quotes.</p>
+              </div>
+              <div class="tip">
+                <span class="tip-num">6</span>
+                <p><strong>Check your bias.</strong> We all have biases — be extra critical of news that confirms what you already believe.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════ FOOTER (always visible) ═══════════════ -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="nav-logo-icon">🔬</span>
+          <span class="footer-brand-name">TruthLens</span>
+          <p class="footer-tagline">AI-powered fake news detection for a more informed world.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" data-page="home">Home</a>
+          <a href="#" data-page="detector">Detector</a>
+          <a href="#" data-page="facts">Facts</a>
+          <a href="#" data-page="how-it-works">How It Works</a>
+          <a href="#" data-page="about">About</a>
+        </div>
+        <div class="footer-bottom">
+          <p>Powered by Machine Learning &nbsp;·&nbsp; TF-IDF + Multi-Model Classifier &nbsp;·&nbsp; scikit-learn + Flask</p>
+          <p class="footer-copy">&copy; 2026 TruthLens. Built for truth.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
