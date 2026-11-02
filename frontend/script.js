@@ -9,7 +9,7 @@
  *   - Sample article pre-fill
  */
 
-const API_URL = "http://localhost:5000/predict";
+const API_URL = "/predict";
 
 /* ══════════════════════════════════════════════════════════════════════════
    PAGE ROUTING

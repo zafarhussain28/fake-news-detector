@@ -45,18 +45,14 @@ This will:
 - Print accuracy, confusion matrix, and classification report
 - Save the best model and TF-IDF vectorizer to `model/`
 
-### 3. Start the backend server
+### 3. Start the app
 
 ```bash
 cd backend
 python app.py
 ```
 
-The API will be available at `http://localhost:5000`.
-
-### 4. Open the frontend
-
-Open `frontend/index.html` in your browser (just double-click it, or use a local file server).
+Open `http://localhost:5000` in your browser. Flask serves the frontend and API from the same origin.
 
 ### 5. Use the app
 
@@ -65,6 +61,10 @@ Open `frontend/index.html` in your browser (just double-click it, or use a local
 3. See the prediction (Real / Fake) and confidence score.
 
 ## API Reference
+
+### GET `/health`
+
+Returns the backend and loaded model status.
 
 ### POST `/predict`
 
