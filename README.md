@@ -2,6 +2,10 @@
 
 A full-stack machine learning web application that classifies news articles as **Real** or **Fake** using TF-IDF vectorization and Logistic Regression.
 
+## Live App
+
+Try the deployed app: [Fake News Detector](https://fake-news-detector-5apv.onrender.com/)
+
 ## Project Structure
 
 ```
